@@ -1,0 +1,12 @@
+.venv*/
+__pycache__/
+*.pyc
+*.cache
+runs/
+models/*.pt
+!models/best_bottles.pt
+models/*.part
+*.aux
+*.out
+*.toc
+*.synctex.gz

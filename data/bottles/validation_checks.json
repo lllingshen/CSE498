@@ -1,0 +1,14 @@
+{
+  "counts": {
+    "train_images": 40,
+    "train_boxes": 66,
+    "val_images": 10,
+    "val_boxes": 15
+  },
+  "unique_image_ids": 50,
+  "unique_file_hashes": 50,
+  "unique_original_urls": 50,
+  "near_duplicate_candidates": [],
+  "apartment_images_in_dataset": false,
+  "label_bounds_valid_with_rounding_tolerance_1e_minus8": true
+}

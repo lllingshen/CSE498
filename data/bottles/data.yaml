@@ -1,0 +1,5 @@
+# The entry-point scripts resolve the path relative to this repository.
+train: images/train
+val: images/val
+names:
+  0: bottle

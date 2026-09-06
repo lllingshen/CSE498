@@ -1,0 +1,26 @@
+{
+  "fixed_at_utc": "2026-09-06T10:29:56.432173+00:00",
+  "selection_policy": "Selected after visual inspection of two input photographs, before any YOLOE prediction. Scene-informed demonstration, not a blind benchmark. Same vocabulary for both photographs; no prompt iteration based on outputs.",
+  "prompts_sha256": "96b8d9f11857b779af46ca2857f404c28132b4df2783d26e49487906d849e125",
+  "model": "yoloe-11m-seg.pt",
+  "text_encoder": "mobileclip_blt.ts",
+  "predict_args": {
+    "conf": 0.25,
+    "imgsz": 1920,
+    "iou": 0.7,
+    "device": "cpu",
+    "max_det": 300,
+    "half": false
+  },
+  "torch_threads": 8,
+  "inputs": {
+    "outputs/CSE498/step2/inputs/1P9A1048.JPG": {
+      "sha256": "a3c6f3e646dfcfc0d57f8d0e124b89d91ad8b4ac191cf0e62b26afd6ba8984c5",
+      "bytes": 14902367
+    },
+    "outputs/CSE498/step2/inputs/1P9A1049.JPG": {
+      "sha256": "4b0af0bdd67ae552f2c0aff2035643c8a1a227235b3bf6171abf14729f092a78",
+      "bytes": 15481451
+    }
+  }
+}

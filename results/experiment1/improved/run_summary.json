@@ -1,0 +1,40 @@
+{
+  "model": "YOLO11m",
+  "model_source": "https://github.com/ultralytics/assets/releases/download/v8.4.0/yolo11m.pt",
+  "model_sha256": "d5ffc1a674953a08e11a8d21e022781b1b23a19b730afc309290bd9fb5305b95",
+  "script_sha256": "b84f852d65e8c4409b8c842105ef73ea188661fd7ff92695ead1da49a066a4f8",
+  "predict_options": {
+    "conf": 0.25,
+    "imgsz": 1920,
+    "iou": 0.45,
+    "agnostic_nms": true,
+    "device": "cpu"
+  },
+  "actual_tensor_shape_from_log": [
+    1,
+    3,
+    1312,
+    1920
+  ],
+  "class_counts": {
+    "1P9A1048.JPG": {
+      "tv": 2,
+      "keyboard": 1,
+      "mouse": 1,
+      "chair": 1,
+      "bottle": 1,
+      "cell phone": 1
+    },
+    "1P9A1049.JPG": {
+      "bottle": 15,
+      "oven": 2,
+      "bowl": 4,
+      "microwave": 1,
+      "sink": 1,
+      "banana": 1
+    }
+  },
+  "candidate_predictions_match": true,
+  "source_and_input_copy_hashes_match_manifest": true,
+  "note": "Counts are model predictions, not manually verified correct instances. No ground-truth accuracy metric is available."
+}

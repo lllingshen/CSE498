@@ -1,0 +1,22 @@
+[
+  {
+    "name": "yoloe-11m-seg.pt",
+    "url": "https://github.com/ultralytics/assets/releases/download/v8.4.0/yoloe-11m-seg.pt",
+    "bytes": 60276714,
+    "sha256": "785199b7cc75a5f4041dec15782a4b8a4105e5a34d7ffb287a0a10781724c5bd",
+    "github_digest": "sha256:785199b7cc75a5f4041dec15782a4b8a4105e5a34d7ffb287a0a10781724c5bd",
+    "asset_id": 340060269,
+    "release": "v8.4.0",
+    "downloaded_at_utc": "2026-09-06T10:30:50.594024+00:00"
+  },
+  {
+    "name": "mobileclip_blt.ts",
+    "url": "https://github.com/ultralytics/assets/releases/download/v8.4.0/mobileclip_blt.ts",
+    "bytes": 599764649,
+    "sha256": "a67804d1b0f07b8b9a20c1761ec0847f34660f5fa338ec70e8f3fce68ed95e54",
+    "github_digest": "sha256:a67804d1b0f07b8b9a20c1761ec0847f34660f5fa338ec70e8f3fce68ed95e54",
+    "asset_id": 340058199,
+    "release": "v8.4.0",
+    "downloaded_at_utc": "2026-09-06T10:31:02.432637+00:00"
+  }
+]

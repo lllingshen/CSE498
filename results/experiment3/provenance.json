@@ -1,0 +1,31 @@
+{
+  "ultralytics_version": "8.4.142",
+  "torch_version": "2.14.0+cpu",
+  "clip_version": "1.0",
+  "clip_install_source": {
+    "url": "https://github.com/ultralytics/CLIP.git",
+    "vcs_info": {
+      "commit_id": "a13192f8cb767260d7dfd98c843b0716593169e7",
+      "vcs": "git"
+    }
+  },
+  "source_hashes": {
+    "ultralytics/nn/text_model.py": "4fda286c9434b5810c2368dd3044e14faa0f7f8544489a9fec8855dece2bb953",
+    "ultralytics/models/yolo/model.py": "d7fce6ae108130b00c0f2537f680b61e3d79e06b30831424c4ca9baf89fb557d",
+    "ultralytics/nn/tasks.py": "2371b1bc9b1a17782c55259cf760fcd603f0bd012feb55737e7809dafe89c807",
+    "ultralytics/utils/downloads.py": "bd6fd32dc6d07fccf5480853e72fd726e5450cef132207ebdbba8e4c6ab640f7"
+  },
+  "tutorial_path": "work/cse498-step3/yoloe_tutorial.ipynb",
+  "tutorial_sha256": "68fff08553916c97a50e8f47d86821f1d5596bd568449b49bf5fdaacf9c4f5d7",
+  "original_tutorial_checkpoint": "yoloe-v8l-seg.pt",
+  "executed_checkpoint": "yoloe-11m-seg.pt",
+  "checkpoint_change_reason": "Use supported current Ultralytics YOLOE-11 medium checkpoint in the existing CPU environment; preserve tutorial text-prompt workflow without installing the old THU fork. Not an exact v8l reproduction.",
+  "text_encoder_implementation": "ultralytics.nn.text_model.MobileCLIPTS",
+  "source_urls": [
+    "https://docs.ultralytics.com/models/yoloe/",
+    "https://github.com/ultralytics/ultralytics/blob/v8.4.142/ultralytics/nn/text_model.py",
+    "https://github.com/ultralytics/ultralytics/blob/v8.4.142/ultralytics/utils/downloads.py",
+    "https://github.com/ultralytics/CLIP",
+    "https://github.com/THU-MIG/yoloe"
+  ]
+}

@@ -1,0 +1,24 @@
+<ORIGINAL_WORKSPACE>/work/cse498-yolo-env/lib/python3.12/site-packages/torch/jit/_serialization.py:176: FutureWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.
+
+image 1/1 <ORIGINAL_WORKSPACE>/outputs/CSE498/step2/inputs/1P9A1048.JPG: 1312x1920 2 computer monitors, 2 computer keyboards, 1 computer mouse, 1 desktop computer tower, 4 office chairs, 4 desks, 1 smartphone, 1 insulated water bottle, 2 bottles, 2 shopping bags, 2 cardboard boxs, 1 electric kettle, 1 paper towel roll, 579.3ms
+Speed: 6.5ms preprocess, 579.3ms inference, 39.7ms postprocess per image at shape (1, 3, 1312, 1920)
+WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.
+
+image 1/1 <ORIGINAL_WORKSPACE>/outputs/CSE498/step2/inputs/1P9A1049.JPG: 1312x1920 17 bottles, 1 electric kettle, 1 microwave oven, 1 oven, 1 stove, 2 cooking pots, 1 frying pan, 1 cutting board, 7 bowls, 1 paper towel roll, 2 sinks, 1 faucet, 541.0ms
+Speed: 6.2ms preprocess, 541.0ms inference, 57.0ms postprocess per image at shape (1, 3, 1312, 1920)
+{
+  "started_at_utc": "2026-09-06T10:32:09.832184+00:00",
+  "script_sha256": "d8163cb8db5de316628c5dc2819f88f5b207219da7968e97d625950be0a9b216",
+  "script": "<ORIGINAL_WORKSPACE>/outputs/CSE498/webcam-object-recognition/test_open_set.py",
+  "device": "cpu",
+  "photos_uploaded": false,
+  "prior_attempt": "setup_attempt1_failed.log: missing tqdm, before image prediction",
+  "status": "completed",
+  "finished_at_utc": "2026-09-06T10:32:13.746409+00:00",
+  "elapsed_seconds": 3.91420432599989,
+  "torch_num_threads": 8,
+  "torch_num_interop_threads": 1,
+  "torch_version": "2.14.0+cpu"
+}

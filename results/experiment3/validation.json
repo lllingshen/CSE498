@@ -1,0 +1,58 @@
+{
+  "status": "passed",
+  "checks": [
+    "original input hashes unchanged",
+    "prompts unchanged after registration",
+    "executed script hash matches delivered script",
+    "completed CPU8 execution",
+    "60 confidence-filtered in-bounds CSV boxes",
+    "annotated JPEGs retain original dimensions",
+    "all preview JPEGs decode",
+    "visual review row references match detections",
+    "model release SHA256 matches downloaded bytes",
+    "saved prompt embedding names and model identifier match registration"
+  ],
+  "images": {
+    "1P9A1048_annotated.jpg": [
+      8192,
+      5464
+    ],
+    "1P9A1048_preview.jpg": [
+      1920,
+      1281
+    ],
+    "1P9A1049_annotated.jpg": [
+      8192,
+      5464
+    ],
+    "1P9A1049_preview.jpg": [
+      1920,
+      1281
+    ]
+  },
+  "embedding_archive": {
+    "embeddings": {
+      "shape": [
+        1,
+        33,
+        512
+      ],
+      "dtype": "float32"
+    },
+    "names": {
+      "shape": [
+        33
+      ],
+      "dtype": "<U22"
+    },
+    "model": {
+      "shape": [],
+      "dtype": "<U9"
+    }
+  },
+  "prediction_counts": {
+    "1P9A1048.JPG": 24,
+    "1P9A1049.JPG": 36
+  },
+  "metric_limit": "No ground-truth annotations: no accuracy metric computed"
+}
