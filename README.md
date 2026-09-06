@@ -1,10 +1,10 @@
-# CSE498: object detection
+# CSE498 Project
 
-Three experiments on two apartment photos: pretrained YOLO11, bottle fine-tuning, and text-prompt detection with YOLOE.
+YOLO11 detection, bottle fine-tuning, and YOLOE on two apartment photos.
 
 ## Setup
 
-Use Python 3.12. Run all commands from this folder:
+Use Python 3.12 and run these commands from the project folder:
 
 ```bash
 python3.12 -m venv .venv
@@ -14,46 +14,50 @@ python -m pip install -r requirements.txt
 python setup_models.py
 ```
 
-The setup script downloads the three official pretrained models. The trained bottle model is already in `models/best_bottles.pt`.
+The last command downloads the pretrained models from Ultralytics. The fine-tuned model is included as `models/best_bottles.pt`.
 
-## Run the experiments
+## 1. Detect objects
 
 ```bash
-# 1. Original YOLO11n settings, then the larger YOLO11m comparison.
-python src/experiment1.py --baseline
-python src/experiment1.py
-
-# 2. Compare YOLO11m before and after bottle fine-tuning.
-python src/compare_bottles.py
-
-# 3. YOLOE with the saved 33 text prompts.
-python src/experiment3.py
+python src/experiment1.py --baseline  # YOLO11n from the original example
+python src/experiment1.py             # YOLO11m with a larger input size
 ```
 
-Images, detection tables, and metrics are saved under `runs/experiment1/`, `runs/experiment2/`, and `runs/experiment3/`. All three demonstrations default to CPU.
+For the original webcam example, run `python original/main.py` and press **q** to quit. The apartment experiments use saved JPGs in `data/apartment/`.
 
-To repeat fine-tuning on the included 40 training / 10 validation images:
+## 2. Fine-tune and compare
+
+The dataset has 40 training images and 10 validation images. To train again:
 
 ```bash
 python src/train_bottles.py
 ```
 
-CPU training is slow. For GPU training, use a CUDA-enabled PyTorch installation and add `--device 0`. The recorded run used PyTorch 2.7.1+cu128, torchvision 0.22.1+cu128, and an RTX 5090. New checkpoints go to `runs/training/`; the included checkpoint is not overwritten.
+CPU training is slow; use `--device 0` with a CUDA-enabled PyTorch installation for GPU training. New weights go to `runs/training/`.
 
-## Code and data
+To compare the included model with pretrained YOLO11m:
 
-- `original/main.py`: unchanged webcam example. Run `python original/main.py` from this folder; press **q** to quit. The saved experiments used existing JPGs, not webcam captures.
-- `src/experiment1.py`: read the two photos, detect objects, and save boxes.
-- `src/train_bottles.py`: fine-tune YOLO11m on the bottle dataset.
-- `src/compare_bottles.py`: compare bottle boxes and validation AP. It maps COCO bottle class 39 to dataset class 0 for a fair comparison.
-- `src/experiment3.py`: run YOLOE using the text embeddings in `data/prompts/`. Changing the words requires regenerating the embeddings.
-- `src/common.py`: shared paths and dataset configuration.
-- `data/apartment/`: the two test photos. `data/bottles/`: 50 labeled images and [source attribution](data/bottles/README.md).
+```bash
+python src/compare_bottles.py
+```
 
-Fine-tuning is ordinary partial fine-tuning, **not LoRA**. The small validation score improved, but the apartment outputs gained false positives. The validation split also selected the best checkpoint; it is not an independent test set. Detection counts are not accuracy.
+The comparison uses the same photos and validation set for both models. It handles the different bottle class IDs (39 before training, 0 after). Fine-tuning improved validation AP but also caused more false positives in the apartment. The validation set was used to select the best model, so it is not a separate test set.
 
-## Sources
+## 3. Detect objects with YOLOE
 
-Based on [valeriouberti/webcam-object-recognition](https://github.com/valeriouberti/webcam-object-recognition), commit `e1279fa`. Course tutorials: [YOLO11 fine-tuning](https://colab.research.google.com/github/roboflow-ai/notebooks/blob/main/notebooks/train-yolo11-object-detection-on-custom-dataset.ipynb) and [YOLOE](https://colab.research.google.com/github/roboflow-ai/notebooks/blob/main/notebooks/zero-shot-object-detection-and-segmentation-with-yoloe.ipynb).
+```bash
+python src/experiment3.py
+```
 
-YOLO11m is an added comparison. Experiment 3 uses `yoloe-11m-seg.pt` instead of the tutorial's `yoloe-v8l-seg.pt`; only boxes are displayed. [Model download sources](models/sources.json) are from Ultralytics. Its models and code use AGPL-3.0 or the applicable Ultralytics license. The report is submitted separately on CourseSite.
+This uses `yoloe-11m-seg.pt` and 33 saved text prompts from `data/prompts/`. Only detection boxes are shown. The prompt vectors are included; changing the words requires generating new vectors.
+
+All results are saved in `runs/experiment1/`, `runs/experiment2/`, and `runs/experiment3/`. The report is submitted separately on CourseSite.
+
+## References
+
+- Original code: [webcam-object-recognition](https://github.com/valeriouberti/webcam-object-recognition)
+- Tutorials: [YOLO11 fine-tuning](https://colab.research.google.com/github/roboflow-ai/notebooks/blob/main/notebooks/train-yolo11-object-detection-on-custom-dataset.ipynb) and [YOLOE](https://colab.research.google.com/github/roboflow-ai/notebooks/blob/main/notebooks/zero-shot-object-detection-and-segmentation-with-yoloe.ipynb)
+- Models: [Ultralytics](https://github.com/ultralytics/assets/releases/tag/v8.4.0), under its applicable AGPL-3.0 or commercial license
+- Dataset: [Open Images bottle subset](data/bottles/README.md)
+
+YOLO11m is an extra comparison; the original example uses YOLO11n. For YOLOE, this project uses the 11m model instead of the tutorial's v8l model. Fine-tuning uses ordinary training with some layers frozen, not LoRA.
