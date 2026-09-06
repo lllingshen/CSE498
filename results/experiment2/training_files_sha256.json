@@ -1,8 +1,0 @@
-{
-  "step3/dataset/manifest.csv": "b7ee81e930a8b52782ac7a1ef4cb26545dc95e59106ab1987c16e39ba1d311fc",
-  "step3/dataset/manifest.json": "0378a532bb3be4ca2a3c7f4fc754b185d1de01a2ec48fdaa311a0747bf752e75",
-  "step3/training/weights/best.pt": "509348c6c7d4c93542b7812ef712a384ded66b15bdb5afe33b270db079c33c79",
-  "step3/training/weights/last.pt": "7e488a846243f50edaa9af1af79545c6534120380c3aac644363884d6511ae33",
-  "step3/training/args.yaml": "a6fb75ee330bb2243ddb1adf122dea01eaaecffe79394c033f3fa58a067d3b78",
-  "webcam-object-recognition/train_bottles.py": "23645863da2f92b0686fe54c9766652627b246e1c6fe1ed91dccd6ec13a43908"
-}

@@ -1,5 +1,2 @@
-# Preserve recorded CSV bytes (including CRLF) across checkouts.
+# Preserve the dataset attribution CSV across checkouts.
 *.csv -text whitespace=cr-at-eol
-# These copied console logs include intentional alignment spaces.
-results/experiment1/baseline/run.log -text whitespace=-blank-at-eol
-results/experiment2/train.log -text whitespace=-blank-at-eol

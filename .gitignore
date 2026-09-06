@@ -6,7 +6,3 @@ runs/
 models/*.pt
 !models/best_bottles.pt
 models/*.part
-*.aux
-*.out
-*.toc
-*.synctex.gz
